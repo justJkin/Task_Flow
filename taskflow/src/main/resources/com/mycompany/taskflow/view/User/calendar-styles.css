@@ -1,0 +1,88 @@
+.calendar-view {
+    -fx-background-color: #f4f4f4;
+}
+
+.calendar-header {
+    -fx-padding: 10px;
+    -fx-background-color: #ddd;
+    -fx-alignment: center;
+}
+
+.month-year {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.calendar-grid {
+    -fx-padding: 10px;
+    -fx-hgap: 5px;
+    -fx-vgap: 5px;
+}
+
+.day-name {
+    -fx-font-weight: bold;
+    -fx-padding: 5px;
+    -fx-alignment: center;
+    -fx-font-size: 14px;
+}
+
+.calendar-day {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-alignment: center;
+    -fx-background-color: white;
+    -fx-border-color: #eee;
+    -fx-border-width: 1px;
+    -fx-text-fill: black;
+    -fx-padding: 0;
+    -fx-font-size: 12px;
+}
+
+.calendar-day:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.today {
+    -fx-font-weight: bold;
+    -fx-text-fill: blue;
+}
+
+.schedule-panel {
+    -fx-padding: 10px;
+    -fx-background-color: #eee;
+    -fx-min-width: 250px;
+}
+
+.schedule-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        -fx-padding: 5px;
+        -fx-hgap: 3px;
+        -fx-vgap: 3px;
+    }
+
+    .day-name {
+        -fx-font-size: 12px;
+    }
+
+    .calendar-day {
+        -fx-pref-width: 30px;
+        -fx-pref-height: 30px;
+        -fx-font-size: 10px;
+    }
+
+    .schedule-panel {
+        -fx-min-width: 200px;
+    }
+
+    .schedule-title {
+        -fx-font-size: 14px;
+    }
+}

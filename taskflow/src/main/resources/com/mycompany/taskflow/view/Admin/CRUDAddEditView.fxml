@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.fxml.FXML?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.taskflow.controller.Admin.CRUDAddEditController"
+      spacing="0" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Tytuł dodawania/edycji -->
+    <Label fx:id="titleLabel" styleClass="main-content-title" />
+
+    <!-- Zakładki: Dane i Kamienie milowe -->
+    <TabPane fx:id="tabPane" prefWidth="600" prefHeight="400">
+        <tabs>
+            <Tab fx:id="dataTab" text="Dane" closable="false">
+                <VBox fx:id="formContainer" spacing="10">
+                    <!-- formularz -->
+                </VBox>
+            </Tab>
+            <Tab fx:id="msTab" text="Kamienie milowe" closable="false">
+                <fx:include fx:id="msTabInclude" source="MilestonesTab.fxml"/>
+            </Tab>
+        </tabs>
+    </TabPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Button text="Anuluj" onAction="#handleCancel"/>
+        <Button text="Zapisz" onAction="#handleSave"/>
+    </HBox>
+</VBox>

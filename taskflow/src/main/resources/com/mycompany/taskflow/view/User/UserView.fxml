@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.taskflow.controller.user.UserController">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="200">
+            <Label text="TaskFlow" styleClass="logo">
+                <padding>
+                    <Insets top="20" bottom="20" left="20" right="20"/>
+                </padding>
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <Button text="Dashboard" styleClass="nav-button" onAction="#loadDashboardView"/>
+            <Button text="Tablica" styleClass="nav-button" onAction="#loadBoardView"/>
+            <Button text="Kalendarz" styleClass="nav-button" onAction="#loadCalendarView"/>
+            <Button text="Zadania" styleClass="nav-button" onAction="#loadTasksView"/>
+            <Button text="Powiadomienia" styleClass="nav-button" onAction="#loadNotificationsView"/>
+            <Button text="Raporty" styleClass="nav-button" onAction="#loadReportView"/>
+            <Button text="Wyloguj" styleClass="nav-button" onAction="#logout"/> <VBox.margin>
+            <Insets bottom="20"/>
+        </VBox.margin>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+        </StackPane>
+    </center>
+    <bottom>
+    </bottom>
+</BorderPane>

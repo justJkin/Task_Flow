@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.taskflow.controller.user.SubtaskDetailsController">
+    <children>
+        <VBox AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <Label styleClass="label" text="Nazwa zadania:" />
+            <Label fx:id="taskNameLabel" styleClass="text" text="" wrapText="true" />
+            <Label styleClass="label" text="Opis:" />
+            <Label fx:id="descriptionLabel" styleClass="text" text="" wrapText="true" />
+            <Label styleClass="label" text="Waga:" />
+            <Label fx:id="weightLabel" styleClass="text" text="" />
+            <Label styleClass="label" text="Termin:" />
+            <Label fx:id="deadlineLabel" styleClass="text" text="" />
+            <HBox alignment="CENTER_RIGHT" spacing="10" VBox.vgrow="ALWAYS">
+                <Button text="Usuń" onAction="#deleteSubtask" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

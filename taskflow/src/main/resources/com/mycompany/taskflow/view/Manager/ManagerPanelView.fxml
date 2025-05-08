@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mycompany.taskflow.controller.Manager.ManagerPanelController"
+      spacing="10"
+      styleClass="content-area">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <TabPane prefWidth="800" prefHeight="600">
+        <Tab text="Zespół">
+            <VBox spacing="10" styleClass="dashboard-section">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <TableView fx:id="teamMembersTable" prefWidth="760" prefHeight="550" styleClass="list-view data-table">
+                    <columns>
+                        <TableColumn fx:id="memberNameColumn" text="Imię i Nazwisko" prefWidth="300" styleClass="table-column"/>
+                        <TableColumn fx:id="memberEmailColumn" text="Email" prefWidth="300" styleClass="table-column"/>
+                        <TableColumn fx:id="memberRoleColumn" text="Rola" prefWidth="160" styleClass="table-column"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <Tab text="Kamienie Milowe i Zadania">
+            <VBox spacing="15" styleClass="dashboard-section">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <TableView fx:id="milestoneTable" prefWidth="760" prefHeight="200" styleClass="list-view data-table">
+                    <columns>
+                        <TableColumn fx:id="milestoneNameColumn" text="Nazwa" prefWidth="380" styleClass="table-column"/>
+                        <TableColumn fx:id="milestoneWeightColumn" text="Waga" prefWidth="380" styleClass="table-column"/>
+                    </columns>
+                </TableView>
+
+                <VBox spacing="5" styleClass="admin-section">
+                    <padding>
+                        <Insets top="5" right="5" bottom="5" left="5"/>
+                    </padding>
+                    <Label fx:id="milestoneInfoLabel" text="Nie wybrano kamienia milowego" styleClass="label"/>
+                    <Label fx:id="remainingWeightLabel" text="Pozostała waga: " styleClass="label"/>
+                </VBox>
+
+                <GridPane hgap="10" vgap="10" prefWidth="760" styleClass="admin-section">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                        <ColumnConstraints halignment="LEFT" minWidth="200" fillWidth="true"/>
+                    </columnConstraints>
+
+                    <Label text="Nazwa Zadania:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="label"/>
+                    <TextField fx:id="taskNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="text-field"/>
+
+                    <Label text="Opis Zadania:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
+                    <TextArea fx:id="taskDescriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                              prefRowCount="3" styleClass="text-area"/>
+
+                    <Label text="Termin:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="label"/>
+                    <DatePicker fx:id="taskDueDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="date-picker"/>
+
+                    <Label text="Priorytet:" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="label"/>
+                    <ComboBox fx:id="taskPriorityComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="combo-box"/>
+
+                    <Label text="Waga:" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="label"/>
+                    <TextField fx:id="taskWeightField" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="text-field"/>
+
+                    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="button-container">
+                        <padding>
+                            <Insets top="5" right="5" bottom="5" left="5"/>
+                        </padding>
+                        <Button fx:id="saveTaskButton" text="Zapisz" onAction="#handleSaveTask" styleClass="button"/>
+                        <Button fx:id="cancelButton" text="Anuluj" onAction="#handleCancel" styleClass="button"/>
+                    </HBox>
+                </GridPane>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.taskflow.controller.Manager.ManagerMainController"
+            styleClass="root">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="200">
+            <Label text="TaskFlow" styleClass="logo">
+                <padding>
+                    <Insets top="20" bottom="20" left="20" right="20"/>
+                </padding>
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <Button text="Dashboard" styleClass="nav-button button" onAction="#loadDashboardView"/>
+            <Button text="Panel Menadżera" styleClass="nav-button button" onAction="#loadManagerPanelView"/>
+            <Button text="Zadania" styleClass="nav-button button" onAction="#loadTasksView"/>
+            <Button text="Kalendarz" styleClass="nav-button button" onAction="#loadCalendarView"/>
+            <Button text="Powiadomienia" styleClass="nav-button button" onAction="#loadNotificationsView"/>
+            <Button text="Raporty" styleClass="nav-button button" onAction="#loadRaportyView"/>
+            <Button text="Wyloguj" styleClass="nav-button button" onAction="#logout"/>
+            <VBox.margin>
+                <Insets bottom="20"/>
+            </VBox.margin>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+            <Label text="Witaj w Panelu Menadżera!" styleClass="main-title label"/>
+        </StackPane>
+    </center>
+    <bottom>
+    </bottom>
+</BorderPane>

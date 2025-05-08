@@ -1,0 +1,3 @@
+/taskflow/target/
+TaskFlow/javafx-sdk-24/**/
+/.idea/**/*

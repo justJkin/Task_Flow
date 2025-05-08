@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21"
+      fx:controller="com.mycompany.taskflow.controller.Manager.DashboardController"
+      styleClass="content-area"
+      spacing="20">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label fx:id="welcomeLabel" styleClass="welcome-text label"/>
+
+    <VBox styleClass="dashboard-section" spacing="5">
+        <Label text="Ostatnie powiadomienia" styleClass="section-title label"/>
+        <ListView fx:id="notificationsListView" styleClass="list-view" prefHeight="150"/>
+    </VBox>
+
+    <Label text="Ostatnio Wykonane" styleClass="section-title label"/>
+
+    <HBox styleClass="spacing-20">
+        <VBox styleClass="dashboard-section" spacing="5">
+            <Label text="Zadania" styleClass="section-title label"/>
+            <TableView fx:id="recentTasksTableView" styleClass="list-view data-table">
+                <columns>
+                    <TableColumn fx:id="recentTaskNameColumn" text="Nazwa" styleClass="table-column"/>
+                    <TableColumn fx:id="recentTaskDueDateColumn" text="Termin" styleClass="table-column"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox styleClass="dashboard-section" spacing="5">
+            <Label text="Cząstki" styleClass="section-title label"/>
+            <TableView fx:id="recentSubtasksTableView" styleClass="list-view data-table">
+                <columns>
+                    <TableColumn fx:id="recentSubtaskNameColumn" text="Nazwa" styleClass="table-column"/>
+                    <TableColumn fx:id="recentSubtaskDueDateColumn" text="Termin" styleClass="table-column"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+
+    <Label text="Nadchodzące Terminy (Tydzień)" styleClass="section-title label"/>
+
+    <HBox styleClass="spacing-20">
+        <VBox styleClass="dashboard-section" spacing="5">
+            <Label text="Zadania" styleClass="section-title label"/>
+            <TableView fx:id="upcomingTasksTableView" styleClass="list-view data-table">
+                <columns>
+                    <TableColumn fx:id="upcomingTaskNameColumn" text="Nazwa" styleClass="table-column"/>
+                    <TableColumn fx:id="upcomingTaskDueDateColumn" text="Termin" styleClass="table-column"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox styleClass="dashboard-section" spacing="5">
+            <Label text="Cząstki" styleClass="section-title label"/>
+            <TableView fx:id="upcomingSubtasksTableView" styleClass="list-view data-table">
+                <columns>
+                    <TableColumn fx:id="upcomingSubtaskNameColumn" text="Nazwa" styleClass="table-column"/>
+                    <TableColumn fx:id="upcomingSubtaskDueDateColumn" text="Termin" styleClass="table-column"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.taskflow.controller.Manager.TaskManagerController" styleClass="content-area">
+    <children>
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Zarządzanie Zadaniami" styleClass="main-content-title label">
+            <padding>
+                <Insets top="20.0" left="10.0" right="10.0" bottom="20.0" />
+            </padding>
+        </Label>
+
+        <TabPane fx:id="tasksTabPane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="taskListTab" text="Lista Zadań">
+                    <content>
+                        <SplitPane dividerPositions="0.35, 0.65" orientation="HORIZONTAL" prefHeight="400.0" prefWidth="800.0">
+                            <items>
+                                <VBox fx:id="taskListViewContainer" spacing="20.0" styleClass="dashboard-section">
+                                    <padding>
+                                        <Insets topRightBottomLeft="10.0" />
+                                    </padding>
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Podział na Kamienie Milowe" styleClass="section-title label" />
+                                        <TreeView fx:id="tasksByMilestoneTreeView" prefHeight="300.0" prefWidth="300.0" styleClass="list-view" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="20.0" styleClass="dashboard-section">
+                                    <padding>
+                                        <Insets topRightBottomLeft="10.0" />
+                                    </padding>
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Przypisanie Zadań do Zespołów" styleClass="section-title label" />
+                                        <ListView fx:id="taskAssignmentsListView" prefHeight="300.0" prefWidth="300.0" styleClass="list-view" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="20.0" styleClass="dashboard-section">
+                                    <padding>
+                                        <Insets topRightBottomLeft="10.0" />
+                                    </padding>
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Ukończone Zadania i Cząstki" styleClass="section-title label" />
+                                        <ListView fx:id="completedTasksListView" prefHeight="300.0" prefWidth="300.0" styleClass="list-view" />
+                                    </children>
+                                </VBox>
+                            </items>
+                        </SplitPane>
+                    </content>
+                </Tab>
+
+                <Tab fx:id="taskPoolTab" text="Pula Zadań">
+                    <content>
+                        <VBox spacing="20.0" styleClass="dashboard-section">
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Zadania Bez Przydzielonych Użytkowników" styleClass="section-title label" />
+                                <ListView fx:id="unassignedTasksListView" prefHeight="300.0" styleClass="list-view" />
+                                <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="admin-section">
+                                    <children>
+                                        <Label text="Przypisz użytkownika:" styleClass="label" />
+                                        <ComboBox fx:id="assignUserComboBox" prefWidth="200.0" promptText="Wybierz użytkownika" styleClass="combo-box" />
+                                        <Button fx:id="assignUserButton" mnemonicParsing="false" text="Przypisz" styleClass="button" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

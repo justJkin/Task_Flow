@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.taskflow.controller.Admin.DashboardController"
+      styleClass="dashboard-view">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="20" styleClass="dashboard-section">
+        <Label styleClass="section-title">Powitanie</Label>
+        <Label fx:id="welcomeLabel" styleClass="welcome-text">Witaj {user.imie}</Label>
+        <Region HBox.hgrow="ALWAYS"/> <Label fx:id="dateTimeLabel" styleClass="date-time"/>
+    </HBox>
+
+    <VBox styleClass="dashboard-section">
+        <Label styleClass="section-title">Ostatnie Powiadomienia</Label>
+        <ListView fx:id="notificationsListView" prefHeight="150"/>
+        <Label fx:id="noNotificationsLabel" text="Brak nowych powiadomień" visible="false"/>
+    </VBox>
+
+    <VBox styleClass="dashboard-section">
+        <Label styleClass="section-title">Przegląd Zespołów</Label>
+        <TextArea fx:id="teamsOverviewTextArea" editable="false" prefHeight="200"/>
+        <Label fx:id="noTeamsOverviewLabel" text="Brak danych o zespołach" visible="false"/>
+    </VBox>
+
+</VBox>

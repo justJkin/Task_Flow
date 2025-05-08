@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.taskflow.controller.user.TaskController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+
+    <HBox spacing="15" VBox.vgrow="ALWAYS">
+        <VBox styleClass="user-section">
+            <Label text="Pula Zadań" styleClass="user-section-title"/>
+            <ListView fx:id="taskPoolListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox styleClass="user-section">
+            <Label text="Wybrane Zadania" styleClass="user-section-title"/>
+            <ListView fx:id="selectedTasksListView" VBox.vgrow="ALWAYS"/>
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Cofnij" styleClass="button" onAction="#undoSelection"/>
+                <Button text="Zatwierdź" styleClass="button" onAction="#confirmSelection"/>
+            </HBox>
+        </VBox>
+
+        <VBox styleClass="user-section">
+            <Label text="Do Zrobienia" styleClass="user-section-title"/>
+            <ListView fx:id="todoTasksListView" VBox.vgrow="ALWAYS"/>
+            <Button text="Edytuj" styleClass="button" onAction="#editTaskDetails"/>
+        </VBox>
+
+        <VBox styleClass="user-section">
+            <Label text="Cząstki Zadań" styleClass="user-section-title"/>
+            <ListView fx:id="taskPartsListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+</VBox>

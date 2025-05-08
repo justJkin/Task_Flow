@@ -1,0 +1,132 @@
+.root {
+    -fx-background-color: #f0f0f0;
+}
+
+.hbox {
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-alignment: TOP_LEFT;
+}
+
+.vbox {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 250px;
+}
+
+.label {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 0;
+    -fx-alignment: CENTER;
+    -fx-text-fill: #333;
+}
+
+
+.todo-column .label {
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+}
+
+.in-progress-column .label {
+    -fx-background-color: #FFA500;
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+}
+
+.done-column .label {
+    -fx-background-color: #3CB371;
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-focus-traversable: false;
+}
+
+.list-cell {
+    -fx-padding: 10px;
+    -fx-spacing: 8px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-focus-traversable: false;
+}
+
+.list-cell:filled:focused,
+.list-cell:filled:selected,
+.list-cell:filled:selected:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.indicator {
+    -fx-shape: "M12 12m-6 0a6 6 0 1 0 12 0a6 6 0 1 0-12 0";
+    -fx-radius: 6px;
+    -fx-margin-right: 10px;
+}
+
+.todo-column .list-cell .indicator {
+    -fx-fill: #6495ED;
+}
+
+.in-progress-column .list-cell .indicator {
+    -fx-fill: #FFA500;
+}
+
+.done-column .list-cell .indicator {
+    -fx-fill: #3CB371;
+}
+
+#todoSubtasksListView, #doneSubtasksListView {
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+    -fx-focus-traversable: false;
+}
+
+#todoSubtasksListView .list-cell, #doneSubtasksListView .list-cell {
+    -fx-padding: 5px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-focus-traversable: false;
+}
+
+#todoSubtasksListView .list-cell:filled:focused,
+#doneSubtasksListView .list-cell:filled:focused,
+#todoSubtasksListView .list-cell:filled:selected,
+#doneSubtasksListView .list-cell:filled:selected,
+#todoSubtasksListView .list-cell:filled:selected:focused,
+#doneSubtasksListView .list-cell:filled:selected:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+
+.button {
+    -fx-background-color: #cccccc; /
+    -fx-text-fill: #333333;
+    -fx-border-color: #999999;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px 10px;
+    -fx-focus-traversable: false;
+}
+
+.button:hover {
+    -fx-background-color: #bbbbbb;
+}
+
+.button:pressed {
+    -fx-background-color: #aaaaaa;
+}

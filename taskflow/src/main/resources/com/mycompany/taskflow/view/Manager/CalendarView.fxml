@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.taskflow.controller.Admin.CalendarController"
+            styleClass="calendar-view"
+            fx:id="calendarRoot">
+    <stylesheets>
+        <URL value="@calendar-styles.css"/>
+    </stylesheets>
+    <top>
+        <HBox alignment="CENTER" spacing="20" styleClass="calendar-header" BorderPane.alignment="CENTER">
+            <Button text="&lt;" onAction="#previousMonth" styleClass="calendar-button button"/>
+            <Label fx:id="monthYearLabel" styleClass="month-year label"/>
+            <Button text="&gt;" onAction="#nextMonth" styleClass="calendar-button button"/>
+        </HBox>
+    </top>
+
+    <center>
+        <GridPane fx:id="calendarGrid" styleClass="calendar-grid" hgap="5" vgap="5">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Pon" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="day-name label"/>
+            <Label text="Wt" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="day-name label"/>
+            <Label text="Śr" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="day-name label"/>
+            <Label text="Czw" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="day-name label"/>
+            <Label text="Pt" GridPane.columnIndex="4" GridPane.rowIndex="0" styleClass="day-name label"/>
+            <Label text="Sob" GridPane.columnIndex="5" GridPane.rowIndex="0" styleClass="day-name label"/>
+            <Label text="Nd" GridPane.columnIndex="6" GridPane.rowIndex="0" styleClass="day-name label"/>
+        </GridPane>
+    </center>
+
+    <right>
+        <VBox styleClass="admin-section" prefWidth="300" BorderPane.alignment="CENTER">
+            <Label text="Terminarz" styleClass="section-title label"/>
+            <ListView fx:id="scheduleListView" styleClass="list-view" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </right>
+</BorderPane>

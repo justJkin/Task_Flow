@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.taskflow.controller.Admin.CalendarController"
+            styleClass="calendar-view"
+            fx:id="calendarRoot">
+    <stylesheets>
+        <URL value="@calendar-styles.css"/>
+    </stylesheets>
+    <center>
+        <HBox spacing="20">
+            <VBox>
+                <HBox alignment="CENTER" spacing="20" styleClass="calendar-header">
+                    <Button text="&lt;" onAction="#previousMonth"/>
+                    <Label fx:id="monthYearLabel" styleClass="month-year"/>
+                    <Button text="&gt;" onAction="#nextMonth"/>
+                </HBox>
+                <GridPane fx:id="calendarGrid" styleClass="calendar-grid">
+                    <Label text="Pon" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="day-name"/>
+                    <Label text="Wt" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="day-name"/>
+                    <Label text="Śr" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="day-name"/>
+                    <Label text="Czw" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="day-name"/>
+                    <Label text="Pt" GridPane.columnIndex="4" GridPane.rowIndex="0" styleClass="day-name"/>
+                    <Label text="Sob" GridPane.columnIndex="5" GridPane.rowIndex="0" styleClass="day-name"/>
+                    <Label text="Nd" GridPane.columnIndex="6" GridPane.rowIndex="0" styleClass="day-name"/>
+                </GridPane>
+            </VBox>
+            <VBox styleClass="schedule-panel" prefWidth="300">
+                <Label text="Terminarz" styleClass="schedule-title"/>
+                <ListView fx:id="scheduleListView" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

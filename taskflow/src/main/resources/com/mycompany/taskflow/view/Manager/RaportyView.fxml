@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.taskflow.controller.Manager.RaportyViewController"
+            styleClass="content-area">
+    <center>
+        <TabPane>
+            <Tab text="Statystyki">
+                <content>
+                    <StackPane styleClass="dashboard-section">
+                        <Label fx:id="statystykiLabel" text="Tutaj będą statystyki" styleClass="main-content-title label"/>
+                    </StackPane>
+                </content>
+            </Tab>
+            <Tab text="Ranking">
+                <content>
+                    <StackPane styleClass="dashboard-section">
+                        <ListView fx:id="rankingListView" prefHeight="200.0" prefWidth="200.0" styleClass="list-view"/>
+                    </StackPane>
+                </content>
+            </Tab>
+            <Tab text="Raportowanie">
+                <content>
+                    <StackPane styleClass="dashboard-section">
+                        <Label fx:id="raportowanieLabel" text="Tutaj będzie raportowanie" styleClass="main-content-title label"/>
+                    </StackPane>
+                </content>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

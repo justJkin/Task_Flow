@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import java.net.URL?>
+<HBox styleClass="hbox" spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.taskflow.controller.user.BoardController">
+    <stylesheets>
+        <URL value="@board-styles.css"/>
+    </stylesheets>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <VBox styleClass="vbox todo-column" spacing="10" HBox.hgrow="ALWAYS">
+        <Label styleClass="label" text="Zadania do zrobienia"/>
+        <ListView fx:id="todoListView" styleClass="list-view" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+        <Label focusTraversable="false" text="Podzadania do zrobienia"/>
+        <ListView fx:id="todoSubtasksListView" styleClass="list-view" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+    </VBox>
+    <VBox styleClass="vbox in-progress-column" spacing="10" HBox.hgrow="ALWAYS">
+        <Label styleClass="label" text="W trakcie realizacji zadania"/>
+        <ListView fx:id="inProgressListView" styleClass="list-view" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+    </VBox>
+    <VBox styleClass="vbox done-column" spacing="10" HBox.hgrow="ALWAYS">
+        <Label styleClass="label" text="Ukończone zadania"/>
+        <ListView fx:id="doneListView" styleClass="list-view" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+        <Label focusTraversable="false" text="Ukończone podzadania"/>
+        <ListView fx:id="doneSubtasksListView" styleClass="list-view" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</HBox>

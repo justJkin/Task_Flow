@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.taskflow.controller.user.DashboardController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label fx:id="welcomeLabel" styleClass="main-content-title"/>
+
+    <VBox spacing="15" VBox.vgrow="ALWAYS">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Postęp zadań:" styleClass="dashboard-section-title"/>
+            <ProgressBar fx:id="progressBar"/>
+            <Label fx:id="progressLabel" styleClass="progress-label"/>
+        </HBox>
+
+        <VBox styleClass="dashboard-section">
+            <Label text="Przegląd zadań" styleClass="dashboard-section-title"/>
+            <ListView fx:id="taskListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox styleClass="dashboard-section">
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Powiadomienia" styleClass="dashboard-section-title"/>
+                <Label fx:id="notificationsCountLabel"  styleClass="notifications-count-label"/>
+            </HBox>
+            <ListView fx:id="notificationsListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </VBox>
+</VBox>

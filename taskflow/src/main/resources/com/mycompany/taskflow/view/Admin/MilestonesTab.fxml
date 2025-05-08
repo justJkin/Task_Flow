@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="root"
+      fx:controller="com.mycompany.taskflow.controller.Admin.MilestonesTabController"
+      spacing="12">
+
+    <TableView fx:id="milestoneTable" prefHeight="400" VBox.vgrow="ALWAYS">
+    <columns>
+            <TableColumn fx:id="colMsName" text="Nazwa" prefWidth="150"/>
+            <TableColumn fx:id="colMsDescription" text="Opis" prefWidth="250"/>
+            <TableColumn fx:id="colMsWeight" text="Waga" prefWidth="80"/>
+            <TableColumn fx:id="colMsTeam" text="Zespół" prefWidth="120"/>
+            <TableColumn fx:id="colMsDelete" text="Usuń" prefWidth="60"/>
+        </columns>
+    </TableView>
+
+    <GridPane hgap="8" vgap="8">
+        <Label text="Nazwa:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfMsName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Opis:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextArea fx:id="taMsDesc" prefRowCount="2" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Waga:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Spinner fx:id="spMsWeight" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Zespół:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbMsTeams" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Button text="Dodaj" fx:id="btnMsAdd" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Label fx:id="lblMsWarning" textFill="red"/>
+</VBox>
